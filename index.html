@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- sidebar start -->
+      <div class="sidebar">
+        <div class="steps">
+          <div class="sidebar-step active">
+            <div class="circle">1</div>
+            <div class="step-info">
+              <span>Step 1</span>
+              <b>Your Info</b>
+            </div>
+          </div>
+          <div class="sidebar-step">
+            <div class="circle">2</div>
+            <div class="step-info">
+              <span>Step 2</span>
+              <b>Select Plan</b>
+            </div>
+          </div>
+          <div class="sidebar-step">
+            <div class="circle">3</div>
+            <div class="step-info">
+              <span>Step 3</span>
+              <b>Add-ons</b>
+            </div>
+          </div>
+          <div class="sidebar-step">
+            <div class="circle">4</div>
+            <div class="step-info">
+              <span>Step 4</span>
+              <b>Summary</b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar end -->
+
+      <!-- Step-1 start -->
+      <div class="step step-1">
+        <div class="header">
+          <h2 class="title">Personal Info</h2>
+          <p>Please provide your name, email Address, and phone number.</p>
+        </div>
+
+        <form action="">
+          <div class="input-group">
+            <div class="label-group">
+              <label for="name">Name</label>
+              <p>This field is required.</p>
+            </div>
+            <input type="text" id="name" placeholder="e.g Stephen King" />
+          </div>
+          <div class="input-group">
+            <div class="label-group">
+              <label for="email">Email Address</label>
+              <p>This field is required.</p>
+            </div>
+            <input
+              type="text"
+              id="email"
+              placeholder="e.g stephenking@lorem.com"
+            />
+          </div>
+          <div class="input-group">
+            <div class="label-group">
+              <label for="phone">Phone Number</label>
+              <p>This field is required.</p>
+            </div>
+            <input type="text" id="phone" placeholder="e.g +1 234 567 890" />
+          </div>
+        </form>
+
+        <div class="btns">
+          <button class="next-step">Next Step</button>
+        </div>
+      </div>
+      <!-- Step-1 end -->
+
+      <!-- Step-2 start -->
+      <div class="step step-2">
+        <div class="header">
+          <h2 class="title">Select Your Plan</h2>
+          <p>You have the option for monthly or yearly billing.</p>
+        </div>
+
+        <form action="">
+          <label for="arcade">
+            <img src="assets\images\icon-arcade.svg" alt="Arcade" />
+            <input
+              type="radio"
+              value="arcade"
+              value="plan"
+              name="plan"
+              id="arcade"
+            />
+            <div class="info">
+              <h3>Arcade</h3>
+              <span class="price">$90/yr</span>
+              <div class="offer">2 months free</div>
+            </div>
+          </label>
+          <label for="advanced">
+            <img src="assets\images\icon-advanced.svg" alt="Advanced" />
+            <input
+              type="radio"
+              value="advanced"
+              value="plan"
+              name="plan"
+              id="advanced"
+            />
+            <div class="info">
+              <h3>Advanced</h3>
+              <span class="price">$120/yr</span>
+              <div class="offer">2 months free</div>
+            </div>
+          </label>
+          <label for="pro">
+            <img src="assets\images\icon-pro.svg" alt="pro" />
+            <input type="radio" value="pro" value="plan" name="plan" id="pro" />
+            <div class="info">
+              <h3>Pro</h3>
+              <span class="price">$150/yr</span>
+              <div class="offer">2 months free</div>
+            </div>
+          </label>
+        </form>
+
+        <div class="switch-plan">
+          <p class="monthly active">Monthly</p>
+          <label for="switch" class="switch">
+            <input type="checkbox" name="switch" id="switch" />
+            <span class="slider round"></span>
+          </label>
+          <p class="yearly">Yearly</p>
+        </div>
+
+        <div class="btns">
+          <button class="prev-step">Go Back</button>
+          <button class="next-step">Next Step</button>
+        </div>
+      </div>
+      <!-- Step-2 end -->
+
+      <!-- Step-3 start -->
+      <div class="step step-3">
+        <div class="header">
+          <h2 class="title">Pick add-ons</h2>
+          <p>Add-ons help enhance your gaming experience.</p>
+        </div>
+
+        <form action="">
+          <label for="online">
+            <input type="checkbox" name="online" id="online" />
+            <div class="info">
+              <h3>Online service</h3>
+              <p class="desc">Access to multiplayer games</p>
+            </div>
+            <span class="price">+$1/mo</span>
+          </label>
+          <label for="larger">
+            <input type="checkbox" name="storage" id="larger" />
+            <div class="info">
+              <h3>Larger storage</h3>
+              <p class="desc">Extra 1TB of cloud save</p>
+            </div>
+            <span class="price">+$2/mo</span>
+          </label>
+          <label for="profile">
+            <input type="checkbox" name="profile" id="profile" />
+            <div class="info">
+              <h3>Customizable Profile</h3>
+              <p class="desc">Custom theme on your profile</p>
+            </div>
+            <span class="price">+$2/mo</span>
+          </label>
+        </form>
+
+        <div class="btns">
+          <button class="prev-step">Go Back</button>
+          <button class="next-step">Next Step</button>
+        </div>
+      </div>
+      <!-- Step-3 end -->
+
+      <!-- Step-4 start -->
+      <div class="step step-4">
+        <div class="header">
+          <h2 class="title">Finishing up</h2>
+          <p>Double-check everything looks OK before confirming.</p>
+        </div>
+
+        <div class="subscription">
+          <div class="plan">
+            <div class="plan-detail">
+              <h3 class="plan-name">Select Plan</h3>
+              <a href="">Change</a>
+            </div>
+            <div class="price">$0/mo</div>
+          </div>
+          <hr />
+
+          <div class="add-ons">
+            <!-- <div class="add-on">
+              <p class="add-on-name">Online Service</p>
+              <span class="price">+$1/mo</span>
+            </div>
+            <div class="add-on">
+              <p class="add-on-name">Larger Storage</p>
+              <span class="price">+$2/mo</span>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="total">
+          <p>Total (per month)</p>
+          <span class="strong-price">+$0/mo</span>
+        </div>
+
+        <div class="btns">
+          <button class="prev-step">Go Back</button>
+          <button class="next-step">Next Step</button>
+        </div>
+      </div>
+      <!-- Step-4 end -->
+
+      <!-- Step-5 start -->
+      <div class="step step-5">
+        <div class="summary">
+          <img src="assets\images\icon-thank-you.svg" alt="thanks" />
+          <h3>Thank you!</h3>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
+        </div>
+      </div>
+      <!-- Step-5 end -->
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="./script.js"></script>
+  </body>
+</html>

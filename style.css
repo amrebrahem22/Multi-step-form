@@ -1,0 +1,611 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-family: "Ubuntu", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--magnolia);
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.err {
+  border: 2px solid var(--strawberry-red) !important;
+}
+
+.next-step {
+  background-color: var(--marine-blue);
+  color: var(--white);
+  width: 120px;
+  height: 50px;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1em;
+  margin-inline-start: auto;
+  display: block;
+  cursor: pointer;
+  border: none;
+}
+
+.prev-step {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--cool-gray);
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: 500;
+  padding-block-end: 1rem;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1;
+  margin-block-end: 1rem;
+}
+
+.container {
+  background-color: var(--white);
+  padding: 1rem;
+  display: flex;
+  width: 900px;
+  height: 600px;
+  border-radius: 1rem;
+}
+/* Start Sidebar */
+.sidebar {
+  background-image: url("assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  color: var(--white);
+  padding-block: 1rem;
+  width: 280px;
+  height: 100%;
+}
+
+.sidebar .steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+.sidebar .steps .sidebar-step {
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar .steps .sidebar-step .circle {
+  border: 2px solid var(--white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+
+.sidebar .steps .sidebar-step.active .circle {
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
+  font-weight: 600;
+  border: none;
+}
+
+.sidebar .steps .sidebar-step .step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.sidebar .steps .sidebar-step .step-info span {
+  color: var(--light-gray);
+  font-size: 13px;
+}
+
+/* End Sidebar */
+
+.step {
+  display: none;
+  padding-inline: 4rem;
+}
+
+.step .header {
+  padding-block-start: 2rem;
+}
+
+.step .header .title {
+  font-size: 2.2em;
+  color: var(--marine-blue);
+}
+
+.step .header p {
+  color: var(--cool-gray);
+  margin-block-start: 0.5rem;
+  font-weight: 500;
+}
+
+/* Start Step 1 */
+
+.step-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.step-1 form {
+  flex: 1;
+}
+
+.step-1 form .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block: 1rem;
+}
+
+.step-1 form .input-group .label-group {
+  display: flex;
+  justify-content: space-between;
+  color: var(--marine-blue);
+}
+
+.step-1 form .input-group .label-group p {
+  color: var(--strawberry-red);
+  display: none;
+}
+
+.step-1 form .input-group input {
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--light-gray);
+  outline: 0;
+  color: var(--marine-blue);
+  font-weight: 600;
+  font-size: 1em;
+}
+.step-1 form .input-group input:focus {
+  border: 1px solid var(--purplish-blue);
+}
+
+.step-1 form .input-group input::placeholder {
+  color: var(--cool-gray);
+}
+
+/* End Step 1 */
+
+/* start step 2 */
+.step-2 {
+  /* display: flex; */
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.step-2 form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.step-2 form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid var(--light-gray);
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  flex: 1;
+}
+
+.step-2 form label:has(> input:checked) {
+  border: 1px solid var(--purplish-blue);
+  background-color: var(--magnolia);
+}
+.step-2 form label img {
+  padding-block-end: 3rem;
+}
+.step-2 form label input {
+  display: none;
+}
+.step-2 form label .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.step-2 form label .info h3 {
+  color: var(--marine-blue);
+}
+.step-2 form label .info .price {
+  color: var(--cool-gray);
+}
+.step-2 form label .info .offer {
+  color: var(--marine-blue);
+}
+
+.switch-plan {
+  background-color: var(--magnolia);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.switch-plan .monthly,
+.switch-plan .yearly {
+  color: var(--cool-gray);
+  transition: all 300ms ease-in-out;
+}
+.switch-plan .active {
+  color: var(--marine-blue);
+}
+
+.switch-plan label {
+  background: hsl(213deg 96% 18%);
+  width: 40px;
+  height: 20px;
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch-plan input {
+  display: none;
+}
+
+.switch-plan label span {
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+
+.switch-plan input:checked ~ span {
+  left: 21px;
+}
+/* end step 2 */
+
+/* start step 3 */
+
+.step-3 {
+  /* display: flex; */
+  flex-direction: column;
+  flex: 1;
+}
+
+.step-3 form {
+  flex: 1;
+  margin-block-start: 2rem;
+}
+
+.step-3 form label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1rem;
+  border: 1px solid var(--light-gray);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.step-3 form label:has(> input:checked) {
+  background-color: var(--magnolia);
+  border: 1px solid var(--purplish-blue);
+}
+
+.step-3 form label input {
+  accent-color: var(--purplish-blue);
+  border: none;
+  transform: scale(1.5);
+}
+
+.step-3 form label .info h3 {
+  color: var(--marine-blue);
+  font-size: 1.1em;
+}
+.step-3 form label .info .desc {
+  color: var(--cool-gray);
+  margin-top: 0.3rem;
+}
+.step-3 form label .price {
+  color: var(--purplish-blue);
+  margin-inline-start: auto;
+  font-weight: 500;
+}
+
+/* end step 3 */
+
+/* Start Step 4 */
+.step-4 {
+  /* display: flex; */
+  flex-direction: column;
+  flex: 1;
+}
+
+.step-4 .subscription {
+  margin-block-start: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--magnolia);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.step-4 .subscription .plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-4 .subscription .plan-detail h3 {
+  color: var(--marine-blue);
+  font-size: 1.1em;
+}
+.step-4 .subscription .plan-detail a {
+  color: var(--cool-gray);
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+.step-4 .subscription .plan .price {
+  font-weight: 600;
+  color: var(--marine-blue);
+}
+
+.step-4 .subscription hr {
+  border: 1px solid var(--light-gray);
+}
+
+.step-4 .add-ons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step-4 .add-ons .add-on {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cool-gray);
+}
+
+.step-4 .add-ons .add-on .price {
+  color: var(--marine-blue);
+}
+
+.step-4 .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  color: var(--cool-gray);
+}
+
+.step-4 .total .strong-price {
+  font-size: 1.3em;
+  color: var(--purplish-blue);
+  font-weight: 700;
+}
+/* End Step 4 */
+
+/* Start Step 5 */
+
+.step-5 {
+  /* display: flex; */
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-5 .summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: popup 500ms ease-in-out;
+}
+
+.step-5 .summary img {
+  width: 100px;
+  margin-block-end: 2rem;
+  
+}
+.step-5 .summary h3 {
+  font-size: 2em;
+  color: var(--marine-blue);
+  margin-block-end: 1rem;
+}
+.step-5 .summary p {
+  color: var(--cool-gray);
+  text-align: center;
+  line-height: 1.6;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* End Step 5 */
+
+/* Responsive */
+@media (max-width: 767px) {
+  .sidebar {
+    background-image: url("assets/images/bg-sidebar-mobile.svg");
+    width: 100vw;
+    height: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .sidebar .steps {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .sidebar .steps .sidebar-step .step-info {
+    display: none;
+  }
+
+  .container {
+    width: 90%;
+    height: fit-content;
+    position: relative;
+    top: 2rem;
+    margin-inline: auto;
+    justify-content: center;
+  }
+  .step {
+    padding: 0;
+  }
+
+  .step-1 {
+    gap: 0rem;
+  }
+  .step-1 form .input-group input {
+    width: 100%;
+  }
+
+  .step .header .title {
+    font-size: 1.6em;
+  }
+  .step .header p {
+    font-size: 0.8em;
+  }
+  .step .header {
+    padding-block-start: 1rem;
+  }
+  .btns {
+    flex: 1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    padding-inline: 1rem;
+    margin: 0;
+  }
+  .prev-step {
+    padding-block-end: 0;
+  }
+
+  /* Start Step 2 */
+  .step-2 form {
+    flex-direction: column;
+  }
+  .step-2 form label {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  .step-2 form label h3 {
+    font-size: 1em;
+  }
+  .step-2 form label .price {
+    font-size: 0.9em;
+  }
+  .step-2 form label .offer {
+    font-size: 0.8em;
+  }
+  .step-2 form label img {
+    padding-block: 0;
+  }
+  /* End Step 2 */
+
+  /* Start step 3 */
+  .step-3 form label .info h3 {
+    font-size: 0.9em;
+  }
+  .step-3 form label .info .desc {
+    font-size: 0.8em;
+  }
+  .step-3 form label .price {
+    color: var(--purplish-blue);
+    margin-inline-start: auto;
+    font-weight: 500;
+  }
+
+  /* End step 3 */
+
+  /* Start Step 5 */
+  .step-5 .summary img {
+    width: 80px;
+    margin-block-end: 1rem;
+    padding-block-start: 3rem;
+  }
+
+  .step-5 .summary p {
+    padding-block-end: 3rem;
+    padding-inline: 0.3rem;
+  }
+  /* End Step 5 */
+}
+
+@media (max-width: 767px) and (min-height: 800px) {
+  .container {
+    top: -1rem;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  .container {
+    top: 6rem;
+    margin-bottom: 220px;
+  }
+}
